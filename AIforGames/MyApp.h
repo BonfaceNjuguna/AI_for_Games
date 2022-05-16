@@ -14,7 +14,7 @@ private:
     Agent* myagent;
 
     void OnStart() override {
-        myanim = new Animation(Rectangle{ 0,0,32,32 }, "yellowbug.txt");
+        myanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
 
 
 

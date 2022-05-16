@@ -1,0 +1,19 @@
+﻿Agent.obj : error LNK2019: unresolved external symbol _GetTime referenced in function "public: void __thiscall Animation::Draw(struct Vector2,float,struct Color const &)" (?Draw@Animation@@QAEXUVector2@@MABUColor@@@Z)
+main.obj : error LNK2001: unresolved external symbol _GetTime
+Agent.obj : error LNK2019: unresolved external symbol _DrawTexturePro referenced in function "public: void __thiscall Animation::Draw(struct Vector2,float,struct Color const &)" (?Draw@Animation@@QAEXUVector2@@MABUColor@@@Z)
+main.obj : error LNK2001: unresolved external symbol _DrawTexturePro
+KeyboardBehaviour.obj : error LNK2019: unresolved external symbol _IsKeyDown referenced in function "public: virtual bool __thiscall KeyboardBehaviour::Update(class Agent *,float)" (?Update@KeyboardBehaviour@@UAE_NPAVAgent@@M@Z)
+main.obj : error LNK2019: unresolved external symbol _InitWindow referenced in function "public: void __thiscall Application::StartUp(void)" (?StartUp@Application@@QAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _WindowShouldClose referenced in function "private: void __thiscall Application::MainLoop(void)" (?MainLoop@Application@@AAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _CloseWindow referenced in function "private: void __thiscall Application::ShutDown(void)" (?ShutDown@Application@@AAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _ClearBackground referenced in function "private: void __thiscall Application::Draw(void)" (?Draw@Application@@AAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _BeginDrawing referenced in function "private: void __thiscall Application::Draw(void)" (?Draw@Application@@AAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _EndDrawing referenced in function __catch$?Draw@Application@@AAEXXZ$0
+main.obj : error LNK2019: unresolved external symbol _SetTargetFPS referenced in function "public: void __thiscall Application::StartUp(void)" (?StartUp@Application@@QAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _GetFrameTime referenced in function "private: void __thiscall Application::MainLoop(void)" (?MainLoop@Application@@AAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _SetConfigFlags referenced in function "public: void __thiscall Application::StartUp(void)" (?StartUp@Application@@QAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _DrawCircle referenced in function "private: virtual void __thiscall MyApp::OnDraw(void)" (?OnDraw@MyApp@@EAEXXZ)
+main.obj : error LNK2019: unresolved external symbol _LoadTexture referenced in function "public: __thiscall Animation::Animation(struct Rectangle,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Animation@@QAE@URectangle@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+main.obj : error LNK2019: unresolved external symbol _DrawText referenced in function __catch$?Draw@Application@@AAEXXZ$0
+D:\AIE\AI_for_Games\Raylib\bin\x64\Debug\raylib.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\AIE\AI_for_Games\AIforGames\Debug\AIforGames.exe : fatal error LNK1120: 15 unresolved externals
