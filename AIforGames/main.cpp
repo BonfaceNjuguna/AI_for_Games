@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 {
     MyApp myapp{ 800,450,"Hooking in Raylib in a new project" };
 
-    myapp.StartUp();
-    
+    myapp.StartUp();   
+
     return 0;
 }
