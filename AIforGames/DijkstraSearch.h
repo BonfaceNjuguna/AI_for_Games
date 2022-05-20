@@ -48,7 +48,7 @@ Path dijkstraSearch(Node* startNode, Node* endNode)
 		auto sortByGScore = [](const Node* l, const Node* r) {
 			return l->gscore < r->gscore;
 		};
-		std::sort(openList.begin(), openList.end());
+		std::sort(openList.begin(), openList.end(), sortByGScore);
 
 		//currentNode = first item in openList
 		auto currentNode = openList.front();
@@ -78,6 +78,7 @@ Path dijkstraSearch(Node* startNode, Node* endNode)
 				{
 					//calculate the sore and update its parent
 					e.target->gscore = gscore;
+
 
 					//add to the openlist for processing
 					openList.push_back(e.target);
