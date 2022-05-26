@@ -159,11 +159,13 @@
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="DijkstraSearch.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FleeBehaviour.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="KeyboardBehaviour.h" />
     <ClInclude Include="MakeNodeGrid.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="MyApp.h" />
+    <ClInclude Include="WanderBehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
