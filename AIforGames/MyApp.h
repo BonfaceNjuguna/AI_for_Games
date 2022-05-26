@@ -31,7 +31,7 @@ private:
 
         }
 
-        //map = new MapObject("bin/level1.map");
+        map = new MapObject("bin/level1.map");
         myanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
 
         myagent = new Agent();
@@ -56,10 +56,4 @@ public:
 
 
 };
-
-//MapObject m("bin/level1.map");
-//float terrain[] = { impassable, 1, 1, 6 };
-//auto nodegraph = MakeNodeGrid(m, 32, terrain);
-//auto path = dijkstraSearch(nodegraph[3], nodegraph[290]);
-
 #endif
