@@ -18,7 +18,7 @@ int main()
     Animation a(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
 
     MapObject map("bin/level1.map");
-    float terrain[] = { impassable, 1, 1, 6 };
+    float terrain[] = { impassable, 1, 1, impassable };
 
     auto nodegraph = MakeNodeGrid(map, 32, terrain); //grid
 
