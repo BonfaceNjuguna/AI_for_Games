@@ -13,7 +13,7 @@ void ResetNodes(std::vector<Node*>& nodes) {
 	}
 }
 
-using Path = std::list<Node*>;
+using Path = std::vector<Node*>;
 
 //procedure dijkstraSearch
 Path dijkstraSearch(Node* startNode, Node* endNode)
@@ -105,8 +105,9 @@ Path dijkstraSearch(Node* startNode, Node* endNode)
 
 	while (current_node)
 	{
-		path.push_front(current_node);
+		path.push_back(current_node);
 		current_node = current_node->parent;
 	}
+	std::reverse(path.begin(), path.end());
 	return path;
 }

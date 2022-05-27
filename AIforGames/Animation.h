@@ -118,7 +118,7 @@ public:
 			image,
 			frames[i],
 			Rectangle{position.x,position.y,drawSize.width,drawSize.height }
-			,{ drawSize.x/2,drawSize.y/2}
+			,{ drawSize.width/2,drawSize.height/2}
 			,degrees,
 			tint
 		);

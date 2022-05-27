@@ -17,11 +17,28 @@ D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4838: conversion fro
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(70,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(71,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,46): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,67): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,67): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-Source.obj : error LNK2019: unresolved external symbol "public: __cdecl Agent::Agent(void)" (??0Agent@@QEAA@XZ) referenced in function main
-Source.obj : error LNK2019: unresolved external symbol "public: virtual __cdecl Agent::~Agent(void)" (??1Agent@@UEAA@XZ) referenced in function main
-Source.obj : error LNK2019: unresolved external symbol "public: virtual void __cdecl Agent::Draw(void)" (?Draw@Agent@@UEAAXXZ) referenced in function main
-D:\AIE\AI_for_Games\AIforGames\x64\Debug\PathFinding.exe : fatal error LNK1120: 3 unresolved externals
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,110): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,89): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,68): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(49,43): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(56,46): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(56,46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(56,67): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\AIE\AI_for_Games\PathFinding\Source.cpp(56,67): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  PathFinding.vcxproj -> D:\AIE\AI_for_Games\AIforGames\x64\Debug\PathFinding.exe

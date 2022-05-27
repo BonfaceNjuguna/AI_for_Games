@@ -1,5 +1,6 @@
 #include "Agent.h"
 #include "KeyboardBehaviour.h"
+#include <raymath.h>
 
 Agent::Agent() {}
 Agent::~Agent() {}
@@ -20,7 +21,15 @@ void Agent::Update(float deltatime) {
 }
 
 void Agent::Draw() {
-	anim->Draw({ m_position.x,m_position.y },0);
+	float angel = 0;
+	auto v = GetVelocity();
+	auto l = Vector2Length(v);
+	if (l!=0)
+	{
+		v = Vector2Normalize(v);
+		angel = std::atan2(v.y, v.x) * RAD2DEG + 90;
+	}
+	anim->Draw({ m_position.x,m_position.y },angel);
 	//DrawCircle(m_position.x, m_position.y, 50, Color{ 255,0,0,255 });
 }
 

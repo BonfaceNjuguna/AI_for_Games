@@ -23,4 +23,4 @@ struct Node {
 	Node* parent;
 };
 
-using Path = std::list<Node*>;
+//using Path = std::list<Node*>;
