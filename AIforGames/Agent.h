@@ -1,7 +1,8 @@
 #pragma once
+#include "Animation.h"
 #include <raymath.h>
 #include <vector>
-#include "Animation.h"
+
 
 class Behaviour;
 
@@ -34,5 +35,5 @@ protected:
 	Vector2 m_position = { 0, 0 };
 	Vector2 m_velocity = { 0, 0 };
 	Vector2 m_force = { 0, 0 };
-	float m_maxSpeed = 100;
+	float m_maxSpeed = 0;
 };

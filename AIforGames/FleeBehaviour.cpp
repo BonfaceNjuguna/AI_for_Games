@@ -22,3 +22,8 @@ bool FleeBehaviour::Update(Agent* agent, float deltaTime)
 
 	return true;
 }
+
+bool FleeBehaviour::Update(Enemy* enemy, float deltatime)
+{
+	return false;
+}

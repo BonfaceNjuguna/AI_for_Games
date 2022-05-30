@@ -49,6 +49,11 @@ bool WanderBehaviour::Update(Agent* agent, float deltaTime)
 	return true;
 }
 
+bool WanderBehaviour::Update(Enemy* enemy, float deltatime)
+{
+	return false;
+}
+
 /// DEBUG ONLY
 void WanderBehaviour::Draw(Agent* agent)
 {

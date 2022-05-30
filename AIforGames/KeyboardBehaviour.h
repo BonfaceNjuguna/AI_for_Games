@@ -10,5 +10,5 @@ public:
 
 	virtual bool Update(Agent* agent, float deltatime);
 private:
-	float m_speed = 150.0f;
+	float m_speed = 10.0f;
 };
