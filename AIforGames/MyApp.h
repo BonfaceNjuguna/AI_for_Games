@@ -36,6 +36,8 @@ private:
 
         }
 
+        float deltaTime = 0;
+
         map = new MapObject("bin/level1.map");
         myanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
         enemyanim = new Animation(Rectangle{ 6,6,32,32 }, "bin/enemybug.txt");
@@ -49,19 +51,8 @@ private:
         //agent
         myagent = new Agent();
         myagent->AddBehaviour(keyboard);
-        //myagent->SetPosition({ 350,350 });
+        myagent->SetPosition({ (float)(screenWidth >> 1), (float)(screenHeight >> 1) });
         myagent->SetMaxSpeed(5);
-        Vector2 pos = myagent->GetPosition();
-        if (pos.y < 0)
-            pos.y = screenHeight;
-        if (pos.y > screenHeight)
-            pos.y = 0;
-        if (pos.x < 0)
-            pos.x = screenWidth;
-        if (pos.x > screenWidth)
-            pos.x = 0;
-        myagent->SetPosition(pos);
-
         myagent->anim = myanim;
 
         //enemy
@@ -76,6 +67,16 @@ private:
         //enemyanim->Draw(Vector2{ 300, 300 }, 0);
         myagent->Draw();
         myenemy->Draw();
+        Vector2 pos = myagent->GetPosition();
+        if (pos.y < 0)
+            pos.y = screenHeight;
+        if (pos.y > screenHeight)
+            pos.y = 0;
+        if (pos.x < 0)
+            pos.x = screenWidth;
+        if (pos.x > screenWidth)
+            pos.x = 0;
+        myagent->SetPosition(pos);
     }
 
     void OnUpdate(float delta) override {

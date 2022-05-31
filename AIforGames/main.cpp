@@ -26,7 +26,10 @@
 
 int main(int argc, char* argv[])
 {
-    MyApp myapp{ 800,450,"Hooking in Raylib in a new project" };
+    int screenWidth = 670;
+    int screenHeight = 450;
+
+    MyApp myapp{ screenWidth, screenHeight,"Hooking in Raylib in a new project" };
 
     myapp.StartUp();   
 

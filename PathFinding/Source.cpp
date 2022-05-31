@@ -9,7 +9,7 @@
 
 int main() 
 {
-    InitWindow(800, 600, "Hooking in Raylib in a new project");
+    InitWindow(670, 600, "Hooking in Raylib in a new project");
 
     Agent h;
     h.SetPosition({ 60,60 });
@@ -42,7 +42,7 @@ int main()
         h.anim = &a; //agent animation
         h.Draw(); // draw agent
         
-        a.Draw(Vector2{ 300, 300 }, 0); // draw anim
+        //a.Draw(Vector2{ 300, 300 }, 0); // draw anim
        
         for (int i = 1; i < path.size(); i++)
         {
