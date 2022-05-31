@@ -11,6 +11,7 @@
 #include "DijkstraSearch.h"
 #include "WanderBehaviour.h"
 #include "FleeBehaviour.h"
+#include "SeekBehaviour.h"
 
 class MyApp : public Application
 {
@@ -37,14 +38,18 @@ private:
 
         map = new MapObject("bin/level1.map");
         myanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
+        enemyanim = new Animation(Rectangle{ 6,6,32,32 }, "bin/enemybug.txt");
 
-        enemyanim = new Animation(Rectangle{ 6,0,32,32 }, "bin/enemybug.txt");
-
-        myagent = new Agent();
+        //behaviours
+        auto keyboard = new KeyboardBehaviour();
         auto wander = new WanderBehaviour();
+        auto seek = new SeekBehaviour();
+        auto flee = new FleeBehaviour();
 
-        myagent->AddBehaviour(wander);
-        myagent->SetPosition({ 350,350 });
+        //agent
+        myagent = new Agent();
+        myagent->AddBehaviour(keyboard);
+        //myagent->SetPosition({ 350,350 });
         myagent->SetMaxSpeed(5);
         Vector2 pos = myagent->GetPosition();
         if (pos.y < 0)

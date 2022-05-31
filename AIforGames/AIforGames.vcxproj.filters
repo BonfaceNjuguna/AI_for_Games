@@ -36,6 +36,9 @@
     <ClCompile Include="FleeBehaviour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SeekBehaviour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
     <ClInclude Include="FleeBehaviour.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekBehaviour.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
   </ItemGroup>

@@ -152,6 +152,7 @@
     <ClCompile Include="FleeBehaviour.cpp" />
     <ClCompile Include="KeyboardBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SeekBehaviour.cpp" />
     <ClCompile Include="WanderBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,7 @@
     <ClInclude Include="MakeNodeGrid.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="MyApp.h" />
+    <ClInclude Include="SeekBehaviour.h" />
     <ClInclude Include="WanderBehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
