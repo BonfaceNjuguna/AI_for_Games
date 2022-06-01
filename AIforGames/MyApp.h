@@ -43,16 +43,16 @@ private:
         enemyanim = new Animation(Rectangle{ 6,6,32,32 }, "bin/enemybug.txt");
 
         //behaviours
-        auto keyboard = new KeyboardBehaviour();
-        auto wander = new WanderBehaviour();
-        auto seek = new SeekBehaviour();
-        auto flee = new FleeBehaviour();
+        KeyboardBehaviour* keyboard = new KeyboardBehaviour();
+        WanderBehaviour* wander = new WanderBehaviour();
+        SeekBehaviour* seek = new SeekBehaviour();
+        FleeBehaviour* flee = new FleeBehaviour();
 
         //agent
         myagent = new Agent();
-        myagent->AddBehaviour(keyboard);
+        myagent->AddBehaviour(wander);
         myagent->SetPosition({ (float)(screenWidth >> 1), (float)(screenHeight >> 1) });
-        myagent->SetMaxSpeed(5);
+        myagent->SetMaxSpeed(50);
         myagent->anim = myanim;
 
         //enemy
@@ -67,6 +67,7 @@ private:
         //enemyanim->Draw(Vector2{ 300, 300 }, 0);
         myagent->Draw();
         myenemy->Draw();
+
         Vector2 pos = myagent->GetPosition();
         if (pos.y < 0)
             pos.y = screenHeight;
@@ -77,6 +78,7 @@ private:
         if (pos.x > screenWidth)
             pos.x = 0;
         myagent->SetPosition(pos);
+        
     }
 
     void OnUpdate(float delta) override {

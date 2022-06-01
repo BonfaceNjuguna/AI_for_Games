@@ -1,2 +1,25 @@
 ﻿  Agent.cpp
+  main.cpp
+D:\AIE\AI_for_Games\AIforGames\Graph.h(10,13): warning C4099: 'Edge': type name first seen using 'class' now seen using 'struct'
+D:\AIE\AI_for_Games\AIforGames\Graph.h(10): message : see declaration of 'Edge'
+D:\AIE\AI_for_Games\AIforGames\Graph.h(15,13): warning C4099: 'Node': type name first seen using 'class' now seen using 'struct'
+D:\AIE\AI_for_Games\AIforGames\Graph.h(15): message : see declaration of 'Node'
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(21,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(21,19): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(22,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(22,19): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,23): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,37): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,37): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(70,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MapObject.h(71,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(40,38): warning C4101: 'e': unreferenced local variable
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(73,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(77,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   AIforGames.vcxproj -> D:\AIE\AI_for_Games\AIforGames\x64\Debug\AIforGames.exe
