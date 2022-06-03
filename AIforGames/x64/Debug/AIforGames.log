@@ -1,5 +1,4 @@
-﻿  Agent.cpp
-  main.cpp
+﻿  main.cpp
 D:\AIE\AI_for_Games\AIforGames\Graph.h(10,13): warning C4099: 'Edge': type name first seen using 'class' now seen using 'struct'
 D:\AIE\AI_for_Games\AIforGames\Graph.h(10): message : see declaration of 'Edge'
 D:\AIE\AI_for_Games\AIforGames\Graph.h(15,13): warning C4099: 'Node': type name first seen using 'class' now seen using 'struct'
@@ -19,13 +18,6 @@ D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4244: 'initializing'
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(70,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(71,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MyApp.h(34,38): warning C4101: 'e': unreferenced local variable
-D:\AIE\AI_for_Games\AIforGames\MyApp.h(73,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\AIE\AI_for_Games\AIforGames\MyApp.h(77,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-raylib.lib(core.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(core.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(rglfw.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(rglfw.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(shapes.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(shapes.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(text.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(text.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(textures.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(textures.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(utils.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(utils.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(87,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(91,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   AIforGames.vcxproj -> D:\AIE\AI_for_Games\AIforGames\x64\Debug\AIforGames.exe

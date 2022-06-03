@@ -12,8 +12,6 @@ public:
 
 	virtual bool Update(Agent* agent, float deltaTime);
 
-	virtual bool Update(Enemy* enemy, float deltatime);
-
 	void Draw(Agent* agent);	// for debug only
 
 private:

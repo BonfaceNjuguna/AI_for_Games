@@ -4,7 +4,6 @@
 #include "Application.h"
 #include "Animation.h"
 #include "Agent.h"
-#include "Enemy.h"
 #include "KeyboardBehaviour.h"
 #include "MakeNodeGrid.h"
 #include "MapObject.h"
@@ -12,6 +11,7 @@
 #include "WanderBehaviour.h"
 #include "FleeBehaviour.h"
 #include "SeekBehaviour.h"
+#include <vector>
 
 class MyApp : public Application
 {
@@ -22,9 +22,9 @@ private:
 
     Agent* myagent;
 
-    MapObject* map;
+    std::vector <Agent*> agentList;
 
-    Enemy* myenemy;
+    MapObject* map;
 
     void OnStart() override {
         try
@@ -36,7 +36,7 @@ private:
 
         }
 
-        float deltaTime = 0;
+        float deltaTime = 1;
 
         map = new MapObject("bin/level1.map");
         myanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
@@ -55,18 +55,32 @@ private:
         myagent->SetMaxSpeed(50);
         myagent->anim = myanim;
 
-        //enemy
-        myenemy = new Enemy();
-        myenemy->anim = enemyanim;
-        myenemy->SetPosition({ 150,150 });
+        //Make a heap of agents
+        for (int i = 0; i < 2; ++i)
+        {
+            auto newAgent = new Agent();
+            if (i < 1)
+            { //Make Flee-ing agents
+                newAgent->AddBehaviour(flee);
+                newAgent->SetPosition({ (float)(screenWidth >> 1), (float)(screenHeight >> 1) });
+                newAgent->SetMaxSpeed(50);
+                newAgent->anim = myanim;
+            }
+            else
+            { //Make Attacking agents.
+                newAgent->AddBehaviour(wander);
+                newAgent->SetPosition({ (float)(screenWidth >> 1), (float)(screenHeight >> 1) });
+                newAgent->SetMaxSpeed(50);
+                newAgent->anim = enemyanim;
+            }
+            agentList.push_back(newAgent);
+        }
     }
     void OnDraw() override {
         map->Draw();
         //DrawCircle(200, 200, 20, RED);
         //myanim->Draw(Vector2{ 300, 300 }, 0);
-        //enemyanim->Draw(Vector2{ 300, 300 }, 0);
         myagent->Draw();
-        myenemy->Draw();
 
         Vector2 pos = myagent->GetPosition();
         if (pos.y < 0)
@@ -78,12 +92,18 @@ private:
         if (pos.x > screenWidth)
             pos.x = 0;
         myagent->SetPosition(pos);
+
+        for (auto a : agentList) {
+            a->Draw();
+        }
         
     }
 
     void OnUpdate(float delta) override {
         myagent->Update(delta);
-        myenemy->Update(delta);
+        for (auto a : agentList) {
+            a->Update(delta);
+        }
     }
 public:
     MyApp(int x, int y, const char* p) : Application{ x,y,p } {}

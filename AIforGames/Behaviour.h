@@ -10,6 +10,4 @@ public:
 	~Behaviour() {}
 
 	virtual bool Update(Agent* agent, float deltatime) = 0;
-
-	virtual bool Update(Enemy* enemy, float deltatime) = 0;
 };

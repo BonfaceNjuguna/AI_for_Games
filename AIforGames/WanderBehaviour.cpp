@@ -36,7 +36,7 @@ bool WanderBehaviour::Update(Agent* agent, float deltaTime)
 	// Change wanderAngle just a bit, so it
 	// won't have the same value in the
 	// next game frame.	
-	m_wanderAngle += (rand() % (int)m_angleChange) - m_angleChange * .5;
+	m_wanderAngle += ((rand() % (int)m_angleChange) - m_angleChange * .5) * 0.01;
 
 	Vector2 wanderForce = Vector2Add(circleCenter, displacement);
 
@@ -45,13 +45,8 @@ bool WanderBehaviour::Update(Agent* agent, float deltaTime)
 	debug_displacement = displacement;
 	/// DEBUG ONLY
 
-	agent->AddForce(wanderForce);
+	agent->SetVelocity(Vector2Scale(wanderForce, 0.2f));
 	return true;
-}
-
-bool WanderBehaviour::Update(Enemy* enemy, float deltatime)
-{
-	return false;
 }
 
 /// DEBUG ONLY

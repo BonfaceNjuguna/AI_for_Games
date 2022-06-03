@@ -148,7 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FleeBehaviour.cpp" />
     <ClCompile Include="KeyboardBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
@@ -161,7 +160,6 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="DijkstraSearch.h" />
-    <ClInclude Include="Enemy.h" />
     <ClInclude Include="FleeBehaviour.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="KeyboardBehaviour.h" />
@@ -169,6 +167,7 @@
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="MyApp.h" />
     <ClInclude Include="SeekBehaviour.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="WanderBehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

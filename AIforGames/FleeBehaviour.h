@@ -12,8 +12,6 @@ public:
 
 	virtual bool Update(Agent* agent, float deltaTime);
 
-	virtual bool Update(Enemy* enemy, float deltatime);
-
 	void SetDestination(Vector2 destination) { m_destination = destination; }
 
 private:
