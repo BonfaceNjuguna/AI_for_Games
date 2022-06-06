@@ -159,8 +159,10 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="Condition.h" />
     <ClInclude Include="DijkstraSearch.h" />
     <ClInclude Include="FleeBehaviour.h" />
+    <ClInclude Include="FSM.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="KeyboardBehaviour.h" />
     <ClInclude Include="MakeNodeGrid.h" />
@@ -168,7 +170,9 @@
     <ClInclude Include="MyApp.h" />
     <ClInclude Include="SeekBehaviour.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Transition.h" />
     <ClInclude Include="WanderBehaviour.h" />
+    <ClInclude Include="WithinRangeCondition.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

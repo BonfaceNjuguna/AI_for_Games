@@ -20,7 +20,7 @@ private:
 
     Animation* enemyanim;
 
-    Agent* myagent;
+    //Agent* myagent;
 
     std::vector <Agent*> agentList;
 
@@ -49,11 +49,11 @@ private:
         FleeBehaviour* flee = new FleeBehaviour();
 
         //agent
-        myagent = new Agent();
+        /*myagent = new Agent();
         myagent->AddBehaviour(wander);
         myagent->SetPosition({ (float)(screenWidth >> 1), (float)(screenHeight >> 1) });
         myagent->SetMaxSpeed(50);
-        myagent->anim = myanim;
+        myagent->anim = myanim;*/
 
         //Make a heap of agents
         for (int i = 0; i < 2; ++i)
@@ -61,15 +61,15 @@ private:
             auto newAgent = new Agent();
             if (i < 1)
             { //Make Flee-ing agents
-                newAgent->AddBehaviour(flee);
-                newAgent->SetPosition({ (float)(screenWidth >> 1), (float)(screenHeight >> 1) });
+                newAgent->AddBehaviour(wander);
+                newAgent->SetPosition({ 150, 150 });
                 newAgent->SetMaxSpeed(50);
                 newAgent->anim = myanim;
             }
             else
             { //Make Attacking agents.
                 newAgent->AddBehaviour(wander);
-                newAgent->SetPosition({ (float)(screenWidth >> 1), (float)(screenHeight >> 1) });
+                newAgent->SetPosition({ 250, 250 });
                 newAgent->SetMaxSpeed(50);
                 newAgent->anim = enemyanim;
             }
@@ -80,7 +80,7 @@ private:
         map->Draw();
         //DrawCircle(200, 200, 20, RED);
         //myanim->Draw(Vector2{ 300, 300 }, 0);
-        myagent->Draw();
+        /*myagent->Draw();
 
         Vector2 pos = myagent->GetPosition();
         if (pos.y < 0)
@@ -91,7 +91,7 @@ private:
             pos.x = screenWidth;
         if (pos.x > screenWidth)
             pos.x = 0;
-        myagent->SetPosition(pos);
+        myagent->SetPosition(pos);*/
 
         for (auto a : agentList) {
             a->Draw();
@@ -100,7 +100,7 @@ private:
     }
 
     void OnUpdate(float delta) override {
-        myagent->Update(delta);
+        //myagent->Update(delta);
         for (auto a : agentList) {
             a->Update(delta);
         }

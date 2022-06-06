@@ -80,5 +80,17 @@
     <ClInclude Include="State.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Transition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Condition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WithinRangeCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
