@@ -1,4 +1,5 @@
 #pragma once
+#include "Transition.h"
 #include <vector> 
 
 class Agent;
@@ -23,4 +24,3 @@ public:
 protected:
 	std::vector<Transition*>  m_transitions;
 };
-Transition* State::getTriggeredTransition(Agent* agent) {

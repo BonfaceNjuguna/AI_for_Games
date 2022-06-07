@@ -148,22 +148,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="FleeBehaviour.cpp" />
     <ClCompile Include="KeyboardBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="WanderBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="AttackState.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Condition.h" />
     <ClInclude Include="DijkstraSearch.h" />
     <ClInclude Include="FleeBehaviour.h" />
     <ClInclude Include="FSM.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="IdleState.h" />
     <ClInclude Include="KeyboardBehaviour.h" />
     <ClInclude Include="MakeNodeGrid.h" />
     <ClInclude Include="MapObject.h" />

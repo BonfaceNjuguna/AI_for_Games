@@ -1,5 +1,7 @@
 #pragma once
 #include "Behaviour.h"
+#include "Transition.h"
+#include "State.h"
 #include <vector>
 
 class State;
@@ -42,3 +44,17 @@ protected:
 
 	State* m_currentState;
 };
+
+bool FiniteStateMachine::Update(Agent* agent, float deltaTime) {
+	if (m_currentState != nullptr) {
+		Transition* transition = m_currentState->getTriggeredTransition(agent);
+		if (transition != nullptr) {
+			m_currentState->exit(agent);
+			m_currentState = transition->getTargetState();
+			m_currentState->init(agent);
+		}
+		m_currentState->update(agent, deltaTime);
+		return true;
+	}
+	return false;
+}
