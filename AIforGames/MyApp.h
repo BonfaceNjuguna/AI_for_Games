@@ -44,7 +44,7 @@ private:
 
         map = new MapObject("bin/level1.map");
         myanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
-        enemyanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/enemybug.txt");
+        //enemyanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/enemybug.txt");
 
         //agent
         myagent = new Agent();
