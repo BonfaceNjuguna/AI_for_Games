@@ -36,12 +36,6 @@
     <ClCompile Include="SeekBehaviour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AttackState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -98,10 +92,7 @@
     <ClInclude Include="WithinRangeCondition.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
-    <ClInclude Include="IdleState.h">
-      <Filter>Header Files\FSM</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackState.h">
+    <ClInclude Include="EnemyStates.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
   </ItemGroup>

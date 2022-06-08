@@ -28,7 +28,6 @@ int main(int argc, char* argv[])
 {
     int screenWidth = 670;
     int screenHeight = 450;
-    SetTargetFPS(60);
 
     MyApp myapp{ screenWidth, screenHeight,"Hooking in Raylib in a new project" };
 

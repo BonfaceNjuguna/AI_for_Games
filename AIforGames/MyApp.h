@@ -13,8 +13,7 @@
 #include "FSM.h"
 #include "State.h"
 #include "WithinRangeCondition.h"
-#include "AttackState.h"
-#include "IdleState.h"
+#include "EnemyStates.h"
 #include <vector>
 
 class MyApp : public Application
@@ -44,25 +43,32 @@ private:
 
         map = new MapObject("bin/level1.map");
         myanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/yellowbug.txt");
-        //enemyanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/enemybug.txt");
+        enemyanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/enemybug.txt");
 
         //agent
         myagent = new Agent();
         KeyboardBehaviour* keyboard = new KeyboardBehaviour();
         myagent->AddBehaviour(keyboard);
         myagent->SetPosition({ screenWidth * 0.5f, screenHeight * 0.5f });
+        myagent->anim = myanim;
 
         //enemy
         myenemy = new Agent();
         FiniteStateMachine* finiteStateMachine = new FiniteStateMachine();
         myenemy->AddBehaviour(finiteStateMachine);
+        myenemy->anim = enemyanim;
+        myenemy->SetPosition({ screenWidth * 0.3f, screenHeight * 0.3f });
+
         auto attackState = new AttackState(myagent, 150);
         auto idleState = new IdleState();
+
         // create the condition, setting the player as the target
         auto withinRangeCondition = new WithinRangeCondition(myagent, 200);
+
         // create the transition, this will transition to the attack state when the
         // withinRange condition is met
         auto toAttackTransition = new Transition(attackState, withinRangeCondition);
+
         // add the transition to the idle state
         idleState->addTransition(toAttackTransition);
         // add all the states, conditions and transitions to the FSM (the enemy
