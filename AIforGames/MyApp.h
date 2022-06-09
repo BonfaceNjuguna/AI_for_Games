@@ -47,38 +47,56 @@ private:
 
         //agent
         myagent = new Agent();
-        KeyboardBehaviour* keyboard = new KeyboardBehaviour();
+        auto keyboard = new KeyboardBehaviour();
+        FiniteStateMachine* agentFiniteStateMachine = new FiniteStateMachine();
         myagent->AddBehaviour(keyboard);
+        myagent->AddBehaviour(agentFiniteStateMachine);
         myagent->SetPosition({ screenWidth * 0.5f, screenHeight * 0.5f });
         myagent->anim = myanim;
 
+        auto fleeState = new FleeState(myenemy, 150);
+        auto agentIdleState = new IdleState();
+        /*auto wanderState = new WanderState();*/
+
+        auto enemyWithinRangeCondition = new WithinRangeCondition(myenemy, 150);
+        auto toFleeTransition = new Transition(fleeState, enemyWithinRangeCondition);
+        agentIdleState->addTransition(toFleeTransition);
+        agentFiniteStateMachine->addState(fleeState);
+        agentFiniteStateMachine->addState(agentIdleState);
+        /*finiteStateMachine->addState(wanderState);*/
+        agentFiniteStateMachine->addCondition(enemyWithinRangeCondition);
+        agentFiniteStateMachine->addTransition(toFleeTransition);
+        //agentFiniteStateMachine->setCurrentState(agentIdleState); //throws an exception position error, not sure why??
+
         //enemy
         myenemy = new Agent();
-        FiniteStateMachine* finiteStateMachine = new FiniteStateMachine();
-        myenemy->AddBehaviour(finiteStateMachine);
+        FiniteStateMachine* enemyFiniteStateMachine = new FiniteStateMachine();
+        myenemy->AddBehaviour(enemyFiniteStateMachine);
         myenemy->anim = enemyanim;
-        myenemy->SetPosition({ screenWidth * 0.3f, screenHeight * 0.3f });
+        myenemy->SetPosition({ screenWidth * 0.1f, screenHeight * 0.1f });
 
         auto attackState = new AttackState(myagent, 150);
+        /*auto wanderState = new WanderState();*/
         auto idleState = new IdleState();
-
+        
         // create the condition, setting the player as the target
-        auto withinRangeCondition = new WithinRangeCondition(myagent, 200);
+        auto agentWithinRangeCondition = new WithinRangeCondition(myagent, 150);
 
         // create the transition, this will transition to the attack state when the
         // withinRange condition is met
-        auto toAttackTransition = new Transition(attackState, withinRangeCondition);
+        auto toAttackTransition = new Transition(attackState, agentWithinRangeCondition);
 
         // add the transition to the idle state
         idleState->addTransition(toAttackTransition);
         // add all the states, conditions and transitions to the FSM (the enemy
         // behaviour)
-        finiteStateMachine->addState(attackState);
-        finiteStateMachine->addState(idleState);
-        finiteStateMachine->addCondition(withinRangeCondition);
-        finiteStateMachine->addTransition(toAttackTransition);
+        enemyFiniteStateMachine->addState(attackState);
+        enemyFiniteStateMachine->addState(idleState);
+        /*enemyFiniteStateMachine->addState(wanderState);*/
+        enemyFiniteStateMachine->addCondition(agentWithinRangeCondition);
+        enemyFiniteStateMachine->addTransition(toAttackTransition);
         // set the current state of the FSM
-        finiteStateMachine->setCurrentState(idleState);
+        enemyFiniteStateMachine->setCurrentState(idleState);
 
 
         //behaviours
@@ -122,16 +140,27 @@ private:
         myagent->Draw();
         myenemy->Draw();
 
-        Vector2 pos = myagent->GetPosition();
-        if (pos.y < 0)
-            pos.y = screenHeight;
-        if (pos.y > screenHeight)
-            pos.y = 0;
-        if (pos.x < 0)
-            pos.x = screenWidth;
-        if (pos.x > screenWidth)
-            pos.x = 0;
-        myagent->SetPosition(pos);
+        Vector2 agentPos = myagent->GetPosition();
+        Vector2 enemyPos = myenemy->GetPosition();
+        if (agentPos.y < 0)
+            agentPos.y = screenHeight;
+        if (agentPos.y > screenHeight)
+            agentPos.y = 0;
+        if (agentPos.x < 0)
+            agentPos.x = screenWidth;
+        if (agentPos.x > screenWidth)
+            agentPos.x = 0;
+
+        if (enemyPos.y < 0)
+            enemyPos.y = screenHeight;
+        if (enemyPos.y > screenHeight)
+            enemyPos.y = 0;
+        if (enemyPos.x < 0)
+            enemyPos.x = screenWidth;
+        if (enemyPos.x > screenWidth)
+            enemyPos.x = 0;
+        myagent->SetPosition(agentPos);
+        myenemy->SetPosition(enemyPos);
 
         /*for (auto a : agentList) {
             a->Draw();

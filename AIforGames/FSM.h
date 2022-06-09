@@ -32,7 +32,7 @@ public:
 		m_conditions.push_back(condition); return condition;
 	}
 
-	void   setCurrentState(State* state) { m_currentState = state; }
+	void  setCurrentState(State* state) { m_currentState = state; }
 
 	virtual bool Update(Agent* agent, float deltaTime);
 

@@ -17,7 +17,11 @@ D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4838: conversion fro
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(70,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(71,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\EnemyStates.h(52,32): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\EnemyStates.h(77,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MyApp.h(37,38): warning C4101: 'e': unreferenced local variable
-D:\AIE\AI_for_Games\AIforGames\MyApp.h(127,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\AIE\AI_for_Games\AIforGames\MyApp.h(131,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(146,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(150,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(155,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(159,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   AIforGames.vcxproj -> D:\AIE\AI_for_Games\AIforGames\x64\Debug\AIforGames.exe
