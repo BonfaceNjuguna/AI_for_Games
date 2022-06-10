@@ -4,7 +4,6 @@
 #include "Application.h"
 #include "Animation.h"
 #include "Agent.h"
-#include "KeyboardBehaviour.h"
 #include "MakeNodeGrid.h"
 #include "MapObject.h"
 #include "DijkstraSearch.h"
@@ -46,28 +45,32 @@ private:
         enemyanim = new Animation(Rectangle{ 0,0,32,32 }, "bin/enemybug.txt");
 
         //agent
-        myagent = new Agent();
+        myagent = new Agent();   
         myenemy = new Agent();
-        auto keyboard = new KeyboardBehaviour();
         FiniteStateMachine* agentFiniteStateMachine = new FiniteStateMachine();
-        //myagent->AddBehaviour(keyboard);
         myagent->AddBehaviour(agentFiniteStateMachine);
         myagent->SetPosition({ screenWidth * 0.5f, screenHeight * 0.5f });
         myagent->anim = myanim;
 
-        auto fleeState = new FleeState(myenemy, 150);
-        auto agentIdleState = new IdleState();
-        /*auto wanderState = new WanderState();*/
+        auto fleeState = new FleeState(myenemy, 90);
+        auto agentKeyboardState = new KeyboardState(80);
 
+        //enemy target
         auto enemyWithinRangeCondition = new WithinRangeCondition(myenemy, 150);
-        auto toFleeTransition = new Transition(fleeState, enemyWithinRangeCondition);
-        agentIdleState->addTransition(toFleeTransition);
+        auto enemyRange = new WithinRangeCondition(myenemy, 250);
+        auto enemyOutOfRangeCondition = new InvertCondition(enemyRange);
+        agentFiniteStateMachine->addCondition(enemyRange);
+        agentFiniteStateMachine->addCondition(enemyOutOfRangeCondition); 
+        auto fleeToKeyboard = new Transition(agentKeyboardState, enemyOutOfRangeCondition);
+        fleeState->addTransition(fleeToKeyboard);
+
+        auto keyboardToFlee = new Transition(fleeState, enemyWithinRangeCondition);
+        agentKeyboardState->addTransition(keyboardToFlee);
         agentFiniteStateMachine->addState(fleeState);
-        agentFiniteStateMachine->addState(agentIdleState);
-        /*finiteStateMachine->addState(wanderState);*/
+        agentFiniteStateMachine->addState(agentKeyboardState);
         agentFiniteStateMachine->addCondition(enemyWithinRangeCondition);
-        agentFiniteStateMachine->addTransition(toFleeTransition);
-        agentFiniteStateMachine->setCurrentState(agentIdleState); //throws an exception position error, not sure why??
+        agentFiniteStateMachine->addTransition(keyboardToFlee);
+        agentFiniteStateMachine->setCurrentState(agentKeyboardState);
 
         //enemy
         FiniteStateMachine* enemyFiniteStateMachine = new FiniteStateMachine();
@@ -75,28 +78,34 @@ private:
         myenemy->anim = enemyanim;
         myenemy->SetPosition({ screenWidth * 0.7f, screenHeight * 0.35f });
 
-        auto attackState = new AttackState(myagent, 150);
-        /*auto wanderState = new WanderState();*/
-        auto idleState = new IdleState();
+        auto attackState = new AttackState(myagent, 80);
+        auto wanderState = new WanderState();
         
-        // create the condition, setting the player as the target
+        // create the condition, setting the agent as the target
         auto agentWithinRangeCondition = new WithinRangeCondition(myagent, 150);
+        auto agentOutOfRangeCondition = new WithinRangeCondition(myagent, 200);
+        auto agentOutOfRange = new InvertCondition(agentOutOfRangeCondition);
+        //stop chasing if away
+        auto attackToWander = new Transition(wanderState, agentOutOfRange);
+        attackState->addTransition(attackToWander);
+        //enemyFiniteStateMachine->addTransition(attackToWander);
+        enemyFiniteStateMachine->addCondition(agentOutOfRange);
+        enemyFiniteStateMachine->addCondition(agentOutOfRangeCondition);
 
         // create the transition, this will transition to the attack state when the
         // withinRange condition is met
         auto toAttackTransition = new Transition(attackState, agentWithinRangeCondition);
 
         // add the transition to the idle state
-        idleState->addTransition(toAttackTransition);
+        wanderState->addTransition(toAttackTransition);
         // add all the states, conditions and transitions to the FSM (the enemy
         // behaviour)
         enemyFiniteStateMachine->addState(attackState);
-        enemyFiniteStateMachine->addState(idleState);
-        /*enemyFiniteStateMachine->addState(wanderState);*/
+        enemyFiniteStateMachine->addState(wanderState);
         enemyFiniteStateMachine->addCondition(agentWithinRangeCondition);
         enemyFiniteStateMachine->addTransition(toAttackTransition);
         // set the current state of the FSM
-        enemyFiniteStateMachine->setCurrentState(idleState);
+        enemyFiniteStateMachine->setCurrentState(wanderState);
 
 
         //behaviours
@@ -141,7 +150,6 @@ private:
         myenemy->Draw();
 
         Vector2 agentPos = myagent->GetPosition();
-        //Vector2 enemyPos = myenemy->GetPosition();
         if (agentPos.y < 0)
             agentPos.y = screenHeight;
         if (agentPos.y > screenHeight)
@@ -152,16 +160,16 @@ private:
             agentPos.x = 0;
         myagent->SetPosition(agentPos);
 
-        /*if (enemyPos.y < 0)
+        /*Vector2 enemyPos = myenemy->GetPosition();
+        if (enemyPos.y < 0)
             enemyPos.y = screenHeight;
         if (enemyPos.y > screenHeight)
             enemyPos.y = 0;
         if (enemyPos.x < 0)
             enemyPos.x = screenWidth;
         if (enemyPos.x > screenWidth)
-            enemyPos.x = 0;*/
-        
-        //myenemy->SetPosition(enemyPos);
+            enemyPos.x = 0;
+        myenemy->SetPosition(enemyPos);*/
 
         /*for (auto a : agentList) {
             a->Draw();

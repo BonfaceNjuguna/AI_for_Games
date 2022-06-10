@@ -11,6 +11,30 @@ public:
 	virtual void update(Agent* agent, float deltaTime) { agent->SetVelocity({ 0,0 }); }
 };
 
+class KeyboardState : public State {
+private:
+	float m_speed;
+public:
+	KeyboardState(float sp) : m_speed{ sp } {}
+	virtual ~KeyboardState() {}
+	virtual void update(Agent* agent, float deltaTime) { 
+		Vector2 force = { 0, 0 };
+		if (IsKeyDown(KEY_UP))
+			force.y = -m_speed;
+
+		if (IsKeyDown(KEY_DOWN))
+			force.y = m_speed;
+
+		if (IsKeyDown(KEY_LEFT))
+			force.x = -m_speed;
+
+		if (IsKeyDown(KEY_RIGHT))
+			force.x = m_speed;
+
+		agent->SetVelocity(force);
+	}
+};
+
 
 class AttackState : public State {
 public:
@@ -29,6 +53,7 @@ private:
 	Agent* m_target;
 };
 
+
 class FleeState : public State{
 public:
 	FleeState(Agent* target, float speed) : a_target(target), a_speed(speed) {}
@@ -46,13 +71,13 @@ private:
 	Agent* a_target;
 };
 
-class WanderBehaviour : public State
+class WanderState : public State
 {
 public:
-	WanderBehaviour() { srand(time(nullptr)); };
-	virtual ~WanderBehaviour() {};
+	WanderState() { srand(time(nullptr)); };
+	virtual ~WanderState() {};
 
-	virtual bool Update(Agent* agent, float deltaTime) {
+	virtual void update(Agent* agent, float deltaTime) {
 		Vector2 velocity = agent->GetVelocity();
 		if (Vector2Length(velocity) == 0)
 		{
@@ -79,7 +104,6 @@ public:
 		Vector2 wanderForce = Vector2Add(circleCenter, displacement);
 
 		agent->SetVelocity(Vector2Scale(wanderForce, 0.2f));
-		return true;
 	}
 
 private:

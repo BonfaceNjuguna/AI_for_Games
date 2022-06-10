@@ -15,3 +15,21 @@ public:
 		return false;
 	}
 };
+
+class InvertCondition : public Condition {
+	Condition* condition;
+public:
+
+	InvertCondition(Condition* c) : condition{ c } {}
+	virtual ~InvertCondition() {}
+
+	virtual bool test(Agent* agent) const {
+		return !condition->test(agent);
+	}
+
+	virtual bool Update(Agent* agent, float deltaTime) {
+		if (test(agent))
+			return true;
+		return false;
+	}
+};

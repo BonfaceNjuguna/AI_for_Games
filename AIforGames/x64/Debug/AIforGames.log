@@ -17,14 +17,9 @@ D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4838: conversion fro
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(34,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(70,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\AIE\AI_for_Games\AIforGames\MapObject.h(71,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\AIE\AI_for_Games\AIforGames\EnemyStates.h(52,32): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\AIE\AI_for_Games\AIforGames\EnemyStates.h(77,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\AIE\AI_for_Games\AIforGames\MyApp.h(37,38): warning C4101: 'e': unreferenced local variable
-D:\AIE\AI_for_Games\AIforGames\MyApp.h(146,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\AIE\AI_for_Games\AIforGames\MyApp.h(150,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-raylib.lib(core.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(core.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(rglfw.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(rglfw.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(shapes.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(shapes.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(text.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(text.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
-raylib.lib(textures.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(textures.obj)' or at 'D:\AIE\AI_for_Games\AIforGames\x64\Debug\raylib.pdb'; linking object as if no debug info
+D:\AIE\AI_for_Games\AIforGames\EnemyStates.h(77,28): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\EnemyStates.h(102,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(36,38): warning C4101: 'e': unreferenced local variable
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(154,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\AIE\AI_for_Games\AIforGames\MyApp.h(158,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   AIforGames.vcxproj -> D:\AIE\AI_for_Games\AIforGames\x64\Debug\AIforGames.exe
