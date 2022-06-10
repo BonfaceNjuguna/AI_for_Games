@@ -22,7 +22,7 @@ public:
 		direction = Vector2Scale(direction, m_speed);
 
 		agent->AddForce(Vector2Subtract(direction, agent->GetVelocity()));
-		//agent->SetVelocity(direction);
+		agent->SetVelocity(direction);
 	}
 private:
 	float m_speed;
@@ -39,7 +39,7 @@ public:
 		direction = Vector2Scale(direction, -a_speed);
 
 		agent->AddForce(Vector2Subtract(direction, agent->GetVelocity()));
-		//agent->SetVelocity(direction);
+		agent->SetVelocity(direction);
 	}
 private:
 	float a_speed;

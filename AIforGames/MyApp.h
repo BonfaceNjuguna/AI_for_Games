@@ -47,9 +47,10 @@ private:
 
         //agent
         myagent = new Agent();
+        myenemy = new Agent();
         auto keyboard = new KeyboardBehaviour();
         FiniteStateMachine* agentFiniteStateMachine = new FiniteStateMachine();
-        myagent->AddBehaviour(keyboard);
+        //myagent->AddBehaviour(keyboard);
         myagent->AddBehaviour(agentFiniteStateMachine);
         myagent->SetPosition({ screenWidth * 0.5f, screenHeight * 0.5f });
         myagent->anim = myanim;
@@ -66,14 +67,13 @@ private:
         /*finiteStateMachine->addState(wanderState);*/
         agentFiniteStateMachine->addCondition(enemyWithinRangeCondition);
         agentFiniteStateMachine->addTransition(toFleeTransition);
-        //agentFiniteStateMachine->setCurrentState(agentIdleState); //throws an exception position error, not sure why??
+        agentFiniteStateMachine->setCurrentState(agentIdleState); //throws an exception position error, not sure why??
 
         //enemy
-        myenemy = new Agent();
         FiniteStateMachine* enemyFiniteStateMachine = new FiniteStateMachine();
         myenemy->AddBehaviour(enemyFiniteStateMachine);
         myenemy->anim = enemyanim;
-        myenemy->SetPosition({ screenWidth * 0.1f, screenHeight * 0.1f });
+        myenemy->SetPosition({ screenWidth * 0.7f, screenHeight * 0.35f });
 
         auto attackState = new AttackState(myagent, 150);
         /*auto wanderState = new WanderState();*/
@@ -141,7 +141,7 @@ private:
         myenemy->Draw();
 
         Vector2 agentPos = myagent->GetPosition();
-        Vector2 enemyPos = myenemy->GetPosition();
+        //Vector2 enemyPos = myenemy->GetPosition();
         if (agentPos.y < 0)
             agentPos.y = screenHeight;
         if (agentPos.y > screenHeight)
@@ -150,17 +150,18 @@ private:
             agentPos.x = screenWidth;
         if (agentPos.x > screenWidth)
             agentPos.x = 0;
+        myagent->SetPosition(agentPos);
 
-        if (enemyPos.y < 0)
+        /*if (enemyPos.y < 0)
             enemyPos.y = screenHeight;
         if (enemyPos.y > screenHeight)
             enemyPos.y = 0;
         if (enemyPos.x < 0)
             enemyPos.x = screenWidth;
         if (enemyPos.x > screenWidth)
-            enemyPos.x = 0;
-        myagent->SetPosition(agentPos);
-        myenemy->SetPosition(enemyPos);
+            enemyPos.x = 0;*/
+        
+        //myenemy->SetPosition(enemyPos);
 
         /*for (auto a : agentList) {
             a->Draw();
