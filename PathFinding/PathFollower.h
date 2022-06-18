@@ -2,7 +2,6 @@
 #include "../AIforGames/Behaviour.h"
 #include "../AIforGames/DijkstraSearch.h"
 #include "../AIforGames/Agent.h"
-#include "../AIforGames/Enemy.h"
 
 class PathFollower : public Behaviour
 {
@@ -38,28 +37,5 @@ public:
 			agent->SetVelocity({ 0, 0 });
 		}
 		return true; 
-	}
-
-	virtual bool Update(Enemy* enemy, float deltatime) {
-		if (path.empty())
-		{
-			return true;
-		}
-
-		if (current != path.end())
-		{
-			glm::vec2 ap{ enemy->GetPosition().x, enemy->GetPosition().y };
-			auto direction = (*current)->position - ap;
-			direction = glm::normalize(direction) * speed;
-			enemy->SetVelocity({ direction.x , direction.y });
-			if (glm::distance(ap, (*current)->position) < deltatime * speed)
-			{
-				current++;
-			}
-		}
-		else {
-			enemy->SetVelocity({ 0, 0 });
-		}
-		return true;
 	}
 };
